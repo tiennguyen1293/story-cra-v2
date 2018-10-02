@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { simpleAction } from './App/actions'
+import { simpleAction } from './store/actionsApp'
 
 class App extends React.Component {
   simpleAction = (event) => {
