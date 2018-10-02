@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { simpleAction } from './store/actionsApp'
+import { simpleAction } from './actions';
 
 class App extends React.Component {
-  simpleAction = (event) => {
+  simpleAction = event => {
     this.props.simpleAction();
-  }
+  };
 
   render() {
     return (
@@ -25,12 +25,10 @@ class App extends React.Component {
           >
             Learn React
           </a>
-          <button onClick={this.simpleAction}>Test redux action</button>
-          <pre>
-            {
-              JSON.stringify(this.props)
-            }
-          </pre>
+          <p>
+            <button onClick={this.simpleAction}>Test Redux Dispatch</button>
+          </p>
+          <pre>{JSON.stringify(this.props)}</pre>
         </header>
       </div>
     );
@@ -38,11 +36,14 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  ...state
- })
+  ...state,
+});
 
- const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
- })
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction()),
+});
 
- export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
