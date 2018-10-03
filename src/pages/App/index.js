@@ -1,27 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Layouts from '../../layouts';
+import Loadable from './Loadable';
 
-import Home from '../Home';
-import About from '../About';
-import Topics from '../Topics';
-import Topic from '../Topic';
+const AsyncHome = Loadable({ loader: () => import('../Home') });
+const AsyncAbout = Loadable({ loader: () => import('../About') });
+const AsyncTopics = Loadable({ loader: () => import('../Topics') });
+const AsyncTopic = Loadable({ loader: () => import('../Topic') });
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Layouts>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
-          <Route exact path="/topics" render={() => <h1>Select Topic</h1>} />
-          <Route path={`/topics/:topicId`} component={Topic} />
-        </Layouts>
-      </Router>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={AsyncHome} />
+      <Route path="/about" component={AsyncAbout} />
+
+      <Route exact path="/topics" component={AsyncTopics} />
+      <Route path="/topics/:topicId" component={AsyncTopic} />
+
+      <Route render={() => <div>404 page</div>} />
+    </Switch>
+  </Router>
+);
 
 export default App;

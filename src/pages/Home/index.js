@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Layouts from '../../layouts';
+
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <Layouts>
         <h2>Home</h2>
-      </div>
+      </Layouts>
     );
   }
 }

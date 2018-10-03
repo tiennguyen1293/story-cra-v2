@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Layouts from '../../layouts';
+
 class About extends React.Component {
   render() {
     return (
-      <div>
+      <Layouts>
         <h2>About</h2>
-      </div>
+      </Layouts>
     );
   }
 }
