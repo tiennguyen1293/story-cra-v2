@@ -1,7 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
-
-import Topic from './components/Topic';
+import { Link } from 'react-router-dom';
 
 class Topics extends React.Component {
   render() {
@@ -21,13 +19,6 @@ class Topics extends React.Component {
             <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
           </li>
         </ul>
-
-        <Route path={`${match.path}/:topicId`} component={Topic} />
-        <Route
-          exact
-          path={match.path}
-          render={() => <h3>Please select a topic.</h3>}
-        />
       </div>
     );
   }

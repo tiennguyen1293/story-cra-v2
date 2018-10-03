@@ -1,58 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Layouts from '../../layouts';
 
 import Home from '../Home';
 import About from '../About';
 import Topics from '../Topics';
-
-import logo from './logo.svg';
-import './App.css';
-import { simpleAction } from './actions';
+import Topic from '../Topic';
 
 class App extends React.Component {
-  simpleAction = event => {
-    this.props.simpleAction();
-  };
-
   render() {
     return (
-      <div className="App">
-        <Router>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <div>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/topics">Topics</Link>
-                </li>
-              </ul>
-            </div>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/topics" component={Topics} />
-          </header>
-        </Router>
-      </div>
+      <Router>
+        <Layouts>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/topics" component={Topics} />
+          <Route exact path="/topics" render={() => <h1>Select Topic</h1>} />
+          <Route path={`/topics/:topicId`} component={Topic} />
+        </Layouts>
+      </Router>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  ...state,
-});
-
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;

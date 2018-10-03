@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import simpleReducer from '../pages/App/reducers';
+import language from '../layouts/shared/reducers';
 
 export default combineReducers({
- simpleReducer
+  language,
 });
