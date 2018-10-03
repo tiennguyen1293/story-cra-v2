@@ -1,5 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import Home from '../Home';
+import About from '../About';
+import Topics from '../Topics';
+
 import logo from './logo.svg';
 import './App.css';
 import { simpleAction } from './actions';
@@ -12,24 +18,27 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <p>
-            <button onClick={this.simpleAction}>Test Redux Dispatch</button>
-          </p>
-          <pre>{JSON.stringify(this.props)}</pre>
-        </header>
+        <Router>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <div>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/topics">Topics</Link>
+                </li>
+              </ul>
+            </div>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/topics" component={Topics} />
+          </header>
+        </Router>
       </div>
     );
   }
