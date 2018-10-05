@@ -1,7 +1,7 @@
 import React from 'react';
 import { injectIntl } from 'react-intl';
 
-import messages from '../shared/messages';
+import messages from 'shared/messages';
 
 class Footer extends React.Component {
   render() {

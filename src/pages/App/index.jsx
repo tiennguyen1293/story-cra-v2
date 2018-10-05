@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Loadable from './Loadable';
 
-const AsyncHome = Loadable({ loader: () => import('../Home') });
-const AsyncAbout = Loadable({ loader: () => import('../About') });
-const AsyncTopics = Loadable({ loader: () => import('../Topics') });
-const AsyncTopic = Loadable({ loader: () => import('../Topic') });
+const AsyncHome = Loadable({ loader: () => import('pages/Home') });
+const AsyncAbout = Loadable({ loader: () => import('pages/About') });
+const AsyncTopics = Loadable({ loader: () => import('pages/Topics') });
+const AsyncTopic = Loadable({ loader: () => import('pages/Topic') });
 
 const App = () => (
   <Router>

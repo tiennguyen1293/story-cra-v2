@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as Cookie from 'js-cookie';
 
-import * as actions from '../shared/actions';
+import * as actions from 'shared/actions';
 
 class Nav extends React.Component {
   state = {
