@@ -1,0 +1,7 @@
+node_modules/**
+config/**
+src/serviceWorker.js
+.*/**
+_*/**
+./**/*.spec.js
+./**/**-jest.js

@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as Cookie from 'js-cookie';
 
-import { changeLanguage } from '../shared/actions';
+import * as actions from '../shared/actions';
 
 class Nav extends React.Component {
   state = {
-    localeList: ['en', 'fr'],
+    localeList: ['vi', 'en', 'fr'],
   };
 
   handleChangeLocale = event => {
     event.preventDefault();
+    const { changeLanguage } = this.props;
+
     const {
       currentTarget: { innerText: locale },
     } = event;
@@ -20,11 +22,13 @@ class Nav extends React.Component {
 
     if (locale !== previousLocale) {
       Cookie.set('language', locale);
-      this.props.changeLanguage(locale);
+      changeLanguage(locale);
     }
   };
 
   render() {
+    const { localeList } = this.state;
+
     return (
       <nav>
         <ul>
@@ -40,7 +44,7 @@ class Nav extends React.Component {
         </ul>
 
         <ul>
-          {this.state.localeList.map((locale, index) => (
+          {localeList.map((locale, index) => (
             <li key={index}>
               <a href="#language" onClick={this.handleChangeLocale}>
                 {locale}
@@ -58,10 +62,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeLanguage: locale => dispatch(changeLanguage(locale)),
+  changeLanguage: locale => dispatch(actions.changeLanguage(locale)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Nav);

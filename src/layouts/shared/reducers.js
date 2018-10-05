@@ -1,5 +1,5 @@
-import * as actions from './actions';
 import * as Cookie from 'js-cookie';
+import * as actions from './actions';
 
 const getLocale = () => Cookie.get('language') || 'en';
 
