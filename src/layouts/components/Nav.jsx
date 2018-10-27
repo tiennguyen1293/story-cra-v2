@@ -1,9 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as Cookie from 'js-cookie';
+import Cookie from 'js-cookie';
+import styled from 'styled-components';
 
 import * as actions from 'shared/actions';
+
+const NavWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
 
 class Nav extends React.Component {
   state = {
@@ -30,7 +37,7 @@ class Nav extends React.Component {
     const { localeList } = this.state;
 
     return (
-      <nav>
+      <NavWrapper>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -52,7 +59,7 @@ class Nav extends React.Component {
             </li>
           ))}
         </ul>
-      </nav>
+      </NavWrapper>
     );
   }
 }

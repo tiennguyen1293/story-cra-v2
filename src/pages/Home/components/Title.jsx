@@ -1,15 +1,14 @@
 import React from 'react';
-
 import messages from '../shared/messages';
 
-class Footer extends React.Component {
+class TitleHome extends React.Component {
   render() {
     const {
       intl: { formatMessage },
     } = this.props;
 
-    return <div>{formatMessage(messages.footer)}</div>;
+    return <h1>{formatMessage(messages.title)}</h1>;
   }
 }
 
-export default Footer;
+export default TitleHome;

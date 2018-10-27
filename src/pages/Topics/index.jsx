@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Layouts from '../../layouts';
+import Layouts from 'layouts';
 
 class Topics extends React.Component {
   render() {

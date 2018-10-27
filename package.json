@@ -1,7 +1,13 @@
 {
   "name": "story-cra-v2",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.1.0",
+  "author": "Tien Nguyen",
+  "description": "This is my story",
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8.10.0"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -14,6 +20,7 @@
     "test": "node scripts/test.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-intl": "^2.7.0",
@@ -22,7 +29,8 @@
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.1.0",
@@ -32,6 +40,7 @@
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.4",
     "babel-plugin-named-asset-import": "^0.2.2",
+    "babel-plugin-styled-components": "^1.8.0",
     "babel-preset-react-app": "^5.0.2",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.1.2",

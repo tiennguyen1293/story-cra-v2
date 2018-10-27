@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layouts from '../../layouts';
+import Layouts from 'layouts';
 
 class About extends React.Component {
   render() {
