@@ -3,28 +3,24 @@ import { injectIntl } from 'react-intl';
 import styled from 'styled-components';
 
 import Nav from 'components/Nav';
-import Footer from 'components/Footer';
 
 import Loading from './assets/loading.gif';
 
 const LayoutWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   width: 100vw;
-`;
-
-const Header = styled.header`
-  position: relative;
+  overflow: hidden;
+  padding: 4rem;
+  padding-top: calc(4rem + env(safe-area-inset-top));
+  padding-right: calc(4rem + env(safe-area-inset-top));
+  padding-bottom: calc(4rem + env(safe-area-inset-top));
+  padding-left: calc(4rem + env(safe-area-inset-top));
 `;
 
 const MainContent = styled.div`
-  flex: 1 0 auto;
-`;
-
-const FooterWrapper = styled.footer`
-  flex-shrink: 0;
+  height: calc(100% - 2rem);
+  margin: 1rem;
+  transition: height 0.2s ease, margin 0.2s ease;
 `;
 
 const LoadingWrapper = styled.img`
@@ -39,15 +35,10 @@ const Layout = ({ children, intl, loading }) => {
 
   return (
     <LayoutWrapper>
-      <Header>
-        <Nav intl={intl} />
-      </Header>
       <MainContent>
+        {/* <Nav intl={intl} /> */}
         {loading ? <LoadingWrapper src={Loading} alt="Loading" /> : childrenWithProps}
       </MainContent>
-      <FooterWrapper>
-        <Footer intl={intl} />
-      </FooterWrapper>
     </LayoutWrapper>
   );
 };

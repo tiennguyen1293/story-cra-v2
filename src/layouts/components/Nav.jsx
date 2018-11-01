@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Cookie from 'js-cookie';
 import styled from 'styled-components';
 
@@ -39,18 +38,6 @@ class Nav extends React.Component {
     return (
       <NavWrapper>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
-
-        <ul>
           {localeList.map((locale, index) => (
             <li key={index}>
               <a href="#language" onClick={this.handleChangeLocale}>
@@ -64,15 +51,11 @@ class Nav extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  locale: state.locale,
-});
-
 const mapDispatchToProps = dispatch => ({
   changeLanguage: locale => dispatch(actions.changeLanguage(locale)),
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(Nav);
