@@ -1,6 +1,6 @@
 {
   "app.home.title": "Home",
-  "app.home.contentMain": "contentMain",
-
-  "app.footer": "Footer"
+  "app.home.content": "Content",
+  "app.home.linkProfile": "Crafted with ❤️ by",
+  "app.home.author": "Tien Nguyen"
 }

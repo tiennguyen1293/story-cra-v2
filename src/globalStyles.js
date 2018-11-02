@@ -11,13 +11,13 @@ export default createGlobalStyle`
   }
 
   html {
-    color: ${props => props.black};
     font-family: ${props => props.theme.fontFamily};
     font-size: 62.5%;
   }
 
   body {
     -webkit-font-smoothing: antialiased;
+    color: ${props => props.theme.black};
   }
 
   body,

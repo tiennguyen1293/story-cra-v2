@@ -1,6 +1,6 @@
 {
   "app.home.title": "Trang chủ",
-  "app.home.contentMain": "Nội dung chính",
-
-  "app.footer": "Chân Trang"
+  "app.home.content": "Nội dung",
+  "app.home.linkProfile": "Làm với ❤️ bởi",
+  "app.home.author": "Tiến Nguyễn"
 }

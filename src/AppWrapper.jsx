@@ -15,6 +15,7 @@ addLocaleData(frLocaleData);
 addLocaleData(viLocaleData);
 
 const theme = {
+  white: '#ffffff',
   black: '#6f757d',
   blue: '#c8d4e2 ',
   purple: '#e5e8f4',

@@ -3,10 +3,18 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'app.home.title',
-    defaultMessage: 'Title',
+    defaultMessage: 'title',
   },
-  contentMain: {
-    id: 'app.home.contentMain',
-    defaultMessage: 'contentMain',
+  content: {
+    id: 'app.home.content',
+    defaultMessage: 'content',
+  },
+  linkProfile: {
+    id: 'app.home.linkProfile',
+    defaultMessage: 'linkProfile',
+  },
+  author: {
+    id: 'app.home.author',
+    defaultMessage: 'author',
   },
 });

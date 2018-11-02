@@ -1,8 +1,9 @@
 import React from 'react';
 import * as L from 'react-loadable';
+import Loading from 'commons/Loading';
 
 const Loadable = opts => L({
-  loading: () => <div>Loading...</div>,
+  loading: () => <Loading />,
   ...opts,
 });
 
