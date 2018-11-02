@@ -18,6 +18,18 @@ const WrapperForm = styled.form`
   ${props => (props.startSearch
     ? 'margin-bottom: 8rem;background: transparent; max-width: none; padding: 0; flex-direction: row; align-items: center'
     : '')};
+
+  @media screen and (max-width: 700px) {
+    ${props => (props.startSearch ? 'height: auto' : '')};
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    ${props => (!props.startSearch
+    ? 'padding: calc(4rem + env(safe-area-inset-top)) calc(5rem + env(safe-area-inset-right)) calc(0rem + env(safe-area-inset-bottom)) calc(5rem + env(safe-area-inset-left));'
+    : '')};
+  }
 `;
 
 const WrapperTop = styled.div`
@@ -40,7 +52,16 @@ const WrapperInput = styled.div`
   margin-top: auto;
   margin-bottom: auto;
   transition: margin 0.2s ease;
-  ${props => (props.startSearch ? 'flex: 1; margin-top: 0; margin-bottom: 0; margin-left: 6.4rem' : '')};
+  ${props => (props.startSearch ? 'flex: 1; margin: 0 4rem;' : '')};
+  ${props => (props.startSearch
+    ? `
+    @media screen and (max-width: 700px) {
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 46rem;
+    }
+    `
+    : '')};
 `;
 
 const TitleInput = styled.h2`

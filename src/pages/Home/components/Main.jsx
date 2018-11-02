@@ -24,8 +24,12 @@ const GridWrapper = styled.div`
   padding-bottom: calc(4rem + env(safe-area-inset-bottom));
 
   @media screen and (max-width: 710px) {
-    grid-auto-rows: 0.2rem;
-    grid-gap: 3rem;
+    grid-gap: 2rem;
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  @media screen and (max-width: 560px) {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   }
 `;
 

@@ -20,6 +20,10 @@ const LayoutWrapper = styled.div`
   padding-left: calc(4rem + env(safe-area-inset-top));
 
   ${props => (props.startSearch ? 'height: auto; overflow: visible;' : '')};
+
+  @media screen and (max-width: 600px) {
+    ${props => (!props.startSearch ? 'padding: 0;' : '')};
+  }
 `;
 
 const MainContent = styled.div`

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { addLocaleData, IntlProvider } from 'react-intl';
+import Helmet from 'react-helmet';
 import enLocaleData from 'react-intl/locale-data/en';
 import viLocaleData from 'react-intl/locale-data/vi';
 import frLocaleData from 'react-intl/locale-data/fr';
@@ -35,6 +36,11 @@ class AppWrapper extends React.Component {
       <IntlProvider locale={language} key={language} messages={messages}>
         <ThemeProvider theme={theme}>
           <React.Fragment>
+            <Helmet>
+              <title>Home</title>
+              <meta name="description" content="Helmet application" />
+              <meta name="theme-color" content="#f0e5ed" />
+            </Helmet>
             <App />
             <GlobalStyles />
           </React.Fragment>
