@@ -11,7 +11,7 @@ const NavWrapper = styled.div`
   align-items: center;
 `;
 
-class Nav extends React.Component {
+class Nav extends React.PureComponent {
   state = {
     localeList: ['vi', 'en', 'fr'],
   };

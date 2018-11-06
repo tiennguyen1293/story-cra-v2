@@ -44,7 +44,7 @@ const Grid = styled.div`
           : props.theme.death)};
 `;
 
-class Loop extends React.Component {
+class Loop extends React.PureComponent {
   grid1 = React.createRef();
 
   grid2 = React.createRef();

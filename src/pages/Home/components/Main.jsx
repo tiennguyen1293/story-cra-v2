@@ -54,7 +54,7 @@ const Grid = styled.div`
           : props.theme.death)};
 `;
 
-class Main extends React.Component {
+class Main extends React.PureComponent {
   render() {
     const { list, searchText, randomGrid } = this.props;
 

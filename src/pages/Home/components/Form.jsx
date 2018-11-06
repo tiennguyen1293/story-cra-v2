@@ -114,7 +114,7 @@ const LinkMe = styled.a`
   }
 `;
 
-class Form extends React.Component {
+class Form extends React.PureComponent {
   render() {
     const {
       intl: { formatMessage },
